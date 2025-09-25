@@ -2,9 +2,10 @@
 #include <iomanip>
 #include <string>
 
-// Definición de constantes y tamaño máximo de los arreglos
+// tamaño máximo de los arreglos
 const int MAX_PRODUCTOS = 100;
-int numProductos = 0; // Contador de productos actuales en el sistema
+int numProductos = 0; 
+// Contador de productos actuales en el sistema
 
 // Arreglos paralelos para almacenar los datos
 int codigos[MAX_PRODUCTOS];
@@ -13,7 +14,7 @@ int stocks[MAX_PRODUCTOS];
 float precios[MAX_PRODUCTOS];
 
 
-// Prototipos de funciones
+// funciones
 
 void cargarDatosIniciales();
 void mostrarMenu();
@@ -62,8 +63,6 @@ int main() {
 
     return 0;
 }
-
-// Implementación de funciones
 
 
 /**
@@ -116,7 +115,7 @@ void mostrarMenu() {
 }
 
 /**
- * Busca un producto por su código y muestra su información.
+ * Busca un producto por su código y mostrar su información.
  */
 
 void consultarProducto() {
@@ -206,11 +205,6 @@ void encontrarProductoMasCaro() {
               << " con un precio de $" << std::fixed << std::setprecision(2) << precios[indiceMasCaro] << std::endl;
 }
 
-/**
- * Busca un producto por su código en el arreglo de códigos.
- * param codigo El código del producto a buscar.
- * return El índice del producto si se encuentra, de lo contrario, -1.
- */
 
 int buscarProductoPorCodigo(int codigo) {
     for (int i = 0; i < numProductos; ++i) {
@@ -222,7 +216,7 @@ int buscarProductoPorCodigo(int codigo) {
 }
 
 /**
- * Limpia el buffer de entrada para evitar problemas con cin y getline.
+ * Limpia el buffer de entrada
  */
 void limpiarBuffer() {
     std::cin.ignore(1000, '\n');
